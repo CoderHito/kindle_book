@@ -6,6 +6,7 @@ services:
       build: .
       image: book_web:latest
       links:
+        - redis:redis
         - db:db
       restart: always
       ports:
