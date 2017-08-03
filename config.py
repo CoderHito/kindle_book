@@ -29,7 +29,7 @@ class Config(object):
     CELERYBEAT_SCHEDULE = {
         'get_book_info': {
             'task': 'get_book_info',
-            'schedule': timedelta(seconds=6)
+            'schedule': timedelta(seconds=600)
             # 'schedule': crontab(hour=1)
         },
     }
