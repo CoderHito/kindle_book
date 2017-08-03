@@ -1,23 +1,23 @@
+
 version: "2.0"
 
-
 services:
-  web:
-    build: .
-    image: kindle_book_web:latest
-    links:
-      - db: db
-    restart: always
-    ports:
-      - 5000:5000
-    environment:
+    web:
+      build: .
+      image: book_web:latest
+      links:
+        - db:db
+      restart: always
+      ports:
+        - 5000:5000
+      environment:
         - DATABASE_USER=root
         - DATABASE_PASS=root
         - DATABASE_URI=db
         - DATABASE_DB=kindle_book
         - RUNTIME=PRODUCTION
 
-   db:
+    db:
       image: mysql
       environment:
         - MYSQL_ROOT_PASSWORD=root
