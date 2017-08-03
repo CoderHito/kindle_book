@@ -11,7 +11,7 @@ class Config(object):
     DATABASE_USER = os.getenv("DATABASE_USER")
     DATABASE_PASS = os.getenv("DATABASE_PASS")
     DATABASE_URI = os.getenv("DATABASE_URI")
-    DATABASE_PORT = 3306
+    DATABASE_PORT = os.getenv("DATABASE_PORT")
     DATABASE_DB = os.getenv("DATABASE_DB")
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://{USER}:{PASS}@{URI}:{PORT}/{DBNAME}?charset=utf8".format(
         USER=DATABASE_USER,
