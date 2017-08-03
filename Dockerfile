@@ -6,3 +6,5 @@ WORKDIR /kindle_book
 
 RUN pip install -r requests.txt
 CMD python app_runner.py
+
+EXPOSE 5000
