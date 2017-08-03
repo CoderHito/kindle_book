@@ -20,8 +20,8 @@ class Config(object):
         PORT=DATABASE_PORT,
         DBNAME=DATABASE_DB,
     )
-    CELERY_BROKER_URL = "redis://localhost:6379/1"
-    CELERY_RESULT_BACKEND = "redis://localhost:6379/2"
+    CELERY_BROKER_URL = "redis://127.0.0.1:6379/1"
+    CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/2"
     CELERY_TASK_SERIALIZER = "json"
     CELERY_TASK_RESULT_EXPIRES = 3600
     CELERY_ACCEPT_CONTENT = ['json']
