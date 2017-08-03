@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -5,12 +7,15 @@ from kindle_book.model.book import Book
 
 
 def get_book():
-    print("Start")
+    print "start"
+    celerylog = open("celery_log.txt", "a")
+    logdata = "start at ----" + datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "\n"
+    celerylog.write(logdata)
+    celerylog.close()
     url = "http://t.bookdna.cn/"
     r = requests.get(url)
     soup = BeautifulSoup(r.text)
     result_set = soup.find_all('div', style="margin-bottom: 0.9em;")
-    tag = soup.find('div', style="margin-bottom: 0.9em;")
     for tag in result_set:
         a = tag.a
         link = a["href"].encode("utf-8")

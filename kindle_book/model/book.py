@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 
-from kindle_book.ext import db
+from app_runner import db
 
 
 class Book(db.Model):

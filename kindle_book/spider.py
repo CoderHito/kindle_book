@@ -1,4 +1,4 @@
-from kindle_book.ext import celery
+from app_runner import celery
 from kindle_book.service.book import get_book
 
 

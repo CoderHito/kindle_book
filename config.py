@@ -6,7 +6,6 @@ from celery.schedules import crontab,timedelta
 class Config(object):
     DEBUG = False
     TEST = False
-    TRACER = os.getenv("TRACER", False)
 
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     DATABASE_USER = os.getenv("DATABASE_USER")
@@ -28,10 +27,10 @@ class Config(object):
     CELERY_ACCEPT_CONTENT = ['json']
     CELERY_RESULT_SERIALIZER = 'json'
     CELERYBEAT_SCHEDULE = {
-        'get_info_every_hour': {
-            'task': 'get_info_every_hour',
-            # 'schedule': timedelta(seconds=3)
-            'schedule': crontab(hour=1)
+        'get_book_info': {
+            'task': 'get_book_info',
+            'schedule': timedelta(seconds=6)
+            # 'schedule': crontab(hour=1)
         },
     }
     CELERY_TIMEZONE = 'UTC'
